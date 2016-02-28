@@ -9,7 +9,7 @@
         <div class="row">
           <div class="text-center">
             <div class='animatedParent' data-sequence='500' id="intro1">
-              <h1 class='animated growIn slower' data-id='1' style="font-family: 'Lobster', cursive;">Welcome to Typogit</h1>
+              <h1 class='animated growIn slower' data-id='1' style="font-family: 'Lobster', cursive;">Welcome to Typography Site</h1>
               <h3 class='animated growIn slower' data-id='2' style="font-family: 'Lobster', cursive;">Join us and learn more about typography</h3>
               <button type="button" class="btn btn-primary animated growIn slower" data-id='3' id="click">Subscribe</button>
             </div>
