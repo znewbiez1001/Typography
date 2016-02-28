@@ -76,7 +76,7 @@
         <div class="row">
           <div class="col-md-6">
             <h1>Techniques</h1>
-            <h3>by our team</h3>
+            <h3>by our team and Khiem</h3>
             <p>There are many facets to the expressive use of typography, and with those come many different techniques to help with visual aid and the graphic design. Spacing and kerning, size-specific spacing, x-height and vertical proportions, character
               variation, width, weight, and contrast, are several techniques that are necessary to be taken into consideration when thinking about the appropriateness of specific typefaces or creating them. When placing two or more differing and/or
               contrasting fonts together, these techniques come into play for organizational strategies and demanding attractive qualities. For example, if the bulk of a title has a more unfamiliar or unusual font, simpler sans-serif fonts will help compliment
