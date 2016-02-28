@@ -28,7 +28,7 @@
   <style type="text/css">
 
     #sec1 {
-      background: url(img/intro.png);
+      background: url(img/intro.jpg);
       background-size: cover;
     }
 
