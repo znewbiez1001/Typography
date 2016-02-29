@@ -79,7 +79,7 @@
                 mysql_query($str, $conn);
                 ?>
 								<script type="text/javascript">
-								alert("SUCCESS");
+								alert("Insert successful to database");
 								</script>
 								<?php
 
@@ -181,7 +181,7 @@
 				<!-- FORM INPUT -->
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<strong>REGISTER FORM</strong>
+						<strong>Register form</strong>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" role="form" method="post" onsubmit="return checkform()" name="reg">

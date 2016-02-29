@@ -11,7 +11,7 @@
             <div class='animatedParent' data-sequence='500' id="intro1">
               <h1 class='animated growIn slower' data-id='1' style="font-family: 'Lobster', cursive;">Welcome to Typogit</h1>
               <h3 class='animated growIn slower' data-id='2' style="font-family: 'Lobster', cursive;">Join us and learn more about typography</h3>
-              <button type="button" class="btn btn-primary animated growIn slower" data-id='3' id="click">Subscribe</button>
+              <button type="button" class="btn btn-primary animated growIn slower" data-id='3' id="click">Sign Up</button>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
         <div class="row">
           <div class="col-md-6">
             <h1>Techniques</h1>
-            <h3>by our team</h3>
+            <h3>by our team and Khiem</h3>
             <p>There are many facets to the expressive use of typography, and with those come many different techniques to help with visual aid and the graphic design. Spacing and kerning, size-specific spacing, x-height and vertical proportions, character
               variation, width, weight, and contrast, are several techniques that are necessary to be taken into consideration when thinking about the appropriateness of specific typefaces or creating them. When placing two or more differing and/or
               contrasting fonts together, these techniques come into play for organizational strategies and demanding attractive qualities. For example, if the bulk of a title has a more unfamiliar or unusual font, simpler sans-serif fonts will help compliment
@@ -154,7 +154,7 @@
             <div class="col-md-4 animated fadeInRight" data-id='3' id="avatar">
               <img src="img/vinh.jpg" class="center-block img-circle img-responsive">
               <h3 class="text-center" style="font-family: 'Lobster', cursive;">The Vinh</h3>
-              <p class="text-center">Database Supervisor</p>
+              <p class="text-center">Database Enginer</p>
             </div>
           </div>
         </div>
