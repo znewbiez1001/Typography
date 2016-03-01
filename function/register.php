@@ -11,7 +11,7 @@
 		background-size: cover;
 	}
 	.panel-default {
- 	opacity: 0.9;
+	margin: auto;
  	margin-top:30px;
  	width: 450px;
  	padding-left: 20px;
