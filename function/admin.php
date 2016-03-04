@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-  if (isset($_SESSION['USERNAME'])) {
+  if (isset($_SESSION['USERNAME']) == 'admin') {
     echo "welcome, ".$_SESSION['USERNAME']. "!";
   } else {
     die('You must be logged in');

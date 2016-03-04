@@ -19,9 +19,10 @@ session_start();
       if ($username == '' || $password == '') {
           echo "<script>alert('DONT LEAVE ANY BLANK')</script>";
       } else {
-          $result = mysql_query("SELECT * FROM moderator WHERE USERNAME ='$username' AND PASSWORD = '$password' AND LEVEL ", $conn);
+          $result = mysql_query("SELECT * FROM register WHERE USERNAME ='$username' AND PASSWORD = '$password' AND LEVEL ", $conn);
           if (mysql_num_rows($result) > 0) {
               while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+                //if level = 1 -> goto admin.php
                   if ($row['USERNAME'] == $username && $row['PASSWORD'] == $password && $row['LEVEL'] == '1') {
                       echo "<script>
                         alert('Logged in');
@@ -38,7 +39,8 @@ session_start();
           } $result = mysql_query("SELECT * FROM register WHERE USERNAME ='$username' AND PASSWORD = '$password' ", $conn);
           if (mysql_num_rows($result) > 0) {
               while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-                  if ($row['USERNAME'] == $username && $row['PASSWORD'] == $password) {
+                //if level = 0 -> goto index.php
+                  if ($row['USERNAME'] == $username && $row['PASSWORD'] == $password && $row['LEVEL'] == '0') {
                       echo "<script>
                         alert('Logged in');
                       </script>";
@@ -48,6 +50,10 @@ session_start();
                   }
               }
 
+          } else {
+            echo "<script>
+              alert('Wrong password or username');
+            </script>";
           }
       }
   }
