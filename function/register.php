@@ -33,8 +33,8 @@
             $username = mysql_escape_string($_POST['USERNAME']);
             $email = $_POST['EMAIL'];
             $vemail = $_POST['VEMAIL'];
-            $pass = SHA1($_POST['PASSWORD']); //SHA1: PASSWORD ENCRYPTION
-            $vpass = SHA1($_POST['VPASSWORD']);
+            $pass = $_POST['PASSWORD']; //SHA1: PASSWORD ENCRYPTION
+            $vpass = $_POST['VPASSWORD'];
             $add = $_POST['ADDRESS'];
             $dob = $_POST['DOB'];
 
@@ -84,87 +84,6 @@
 								<?php
 
             }
-
-                        /*$query = mysql_query("SELECT * FROM register WHERE USERNAME ='$username'");
-                        if(mysql_num_rows($query) > 0){
-                            ?>
-                            <script type="text/javascript">
-                            alert("USERNAME EXISTS! TRY ANOTHER ONE");
-
-                            </script>
-                            <?php
-                        }
-
-                        if ($pass != $vpass) {
-                                ?>
-                                <script type="text/javascript">
-                                alert("PASSWORD DID NOT MATCH");
-
-                                </script>
-                                <?php
-                        }
-
-                        if ($email != $vemail) {
-                                ?>
-                                <script type="text/javascript">
-                                alert("EMAIL DID NOT MATCH");
-
-                                </script>
-                                <?php
-                        } else {
-                            $str = "insert into register values ('','$name','$username','$email','$pass','$add','$dob')";
-                            mysql_query($str, $conn);
-                            ?>
-                            <script type="text/javascript">
-                            alert("SUCCESS");
-                            </script>
-                            <?php
-                        }
-
-
-
-
-
-            /*$check_username = mysql_query("SELECT * FROM 'register' WHERE 'USERNAME' = '$username'");
-            if (mysql_num_rows($check_username) > 0) {
-                ?>
-                            <script type="text/javascript">
-                            alert("USERNAME EXISTS");
-
-                            </script>
-                            <?php
-
-            } else {
-                $str = "insert into register values ('','$name','$username','$email','$pass','$add','$dob')";
-                mysql_query($str, $conn);
-                ?>
-                                <script type="text/javascript">
-                                alert("SUCCESS");
-                                </script>
-                                <?php
-
-            }*/
-
-            /*if ($pass != $vpass) {
-                ?>
-                                <script type="text/javascript">
-                                alert("PASSWORD DID NOT MATCH");
-
-                                </script>
-                                <?php
-
-            } elseif ($email != $vemail) {
-                ?>
-                            <script type="text/javascript">
-                            alert("EMAIL DID NOT MATCH");
-
-                            </script>
-                            <?php
-
-            } else {
-
-
-            }*/
         }
 
     ?>
