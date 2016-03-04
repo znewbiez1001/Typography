@@ -7,7 +7,7 @@
 
     $result = array(
       'success' => true,
-      'message' => 'Đã xóa khách hàng',
+      'message' => 'Đã xoá người dùng',
     );
 
     header('Content-type: application/json');
@@ -15,7 +15,7 @@
   } else {
     $result = array(
       'success' => false,
-      'message' => 'Không có mã phòng',
+      'message' => 'Không có mã người dùng',
       //'abc' => 'xyz'
     );
 

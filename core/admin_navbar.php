@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <?php require_once "head.php"; ?>
@@ -14,7 +15,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.php">Typogit</a>
+          <ul class="nav navbar-nav navbar-left">
+              <a href="../index.php" class="navbar-brand">Typogit</a>
+          </ul>
+
+
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,7 +32,12 @@
                 <li><a href="list_subscriber.php">Subscriber's idea</a></li>
                 <li><a href="#">Add Moderators</a></li>
               </ul>
+
             </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php echo"<a class='navbar-brand' href='logout.php'>Logout <span class='spanclass'>" .$_SESSION['USERNAME']. "</span></a>" ?>
+
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
