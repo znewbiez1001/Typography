@@ -75,7 +75,7 @@
 								<?php
 
             } else {
-                $str = "insert into register values ('','$name','$username','$email','$pass','$add','$dob')";
+                $str = "insert into register values ('','$name','$username','$email','$pass','$add','$dob','')";
                 mysql_query($str, $conn);
                 ?>
 								"<SCRIPT LANGUAGE='JavaScript'>
