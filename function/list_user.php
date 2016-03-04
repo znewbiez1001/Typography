@@ -13,15 +13,28 @@ session_start();
 <html>
   <?php require '../core/head.php'; ?>
   <head>
-    <style media="screen">
-      table, th, tr, td {
-        margin-left: 15%;
-        margin-top: 100px;
-        border: 2px solid black;
-        text-align: center;
-        font-size: 17px;
-      }
-    </style>
+  <style media="screen">
+  table, th, tr, td {
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(32, 124, 21);
+    color: rgb(244, 183, 0);
+  }
+  tr:nth-child(odd) {
+    background-color: rgb(34, 154, 180);
+    color: rgb(244, 183, 0);
+  }
+  body{
+    background: url(../img/register.jpg);
+    background-size: cover;
+  }
+
+  </style>
   </head>
   <body>
     <?php
@@ -40,6 +53,7 @@ session_start();
       <th>PASSWORD</th>
       <th>ADDRESS</th>
       <th>DOB</th>
+      <th>LEVEL</th>
       <th>DELETE</th>
       </tr>;
     <?php
@@ -55,6 +69,7 @@ session_start();
       <td><?php echo $row[4] ?></td>
       <td><?php echo $row[5] ?></td>
       <td><?php echo $row[6] ?></td>
+      <td><?php echo $row[7] ?></td>
       <td><button style="color:red" class="js-delete" data-id="<?php echo $row[0] ?>">Xóa</button></td>
       </tr>
       <?php
@@ -74,7 +89,7 @@ session_start();
 
             $.ajax({
                 type: 'POST',
-                url: "xoakh.php",
+                url: "delete_users.php",
                 data: {
                   makh: id,
                 },

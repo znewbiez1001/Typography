@@ -2,7 +2,7 @@
   if (isset($_POST['makh'])) {
     include "connecttk.php";
     $makh = $_POST['makh'];
-    $query = "delete from register where ID = '$makh'";
+    $query = "delete from subscribers where SUB_ID = '$makh'";
     mysql_query($query, $conn);
 
     $result = array(
@@ -16,7 +16,6 @@
     $result = array(
       'success' => false,
       'message' => 'Không có mã người dùng',
-      //'abc' => 'xyz'
     );
 
     header('Content-type: application/json');
