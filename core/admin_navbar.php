@@ -30,7 +30,7 @@
               <ul class="dropdown-menu">
                 <li><a href="list_user.php">User's database</a></li>
                 <li><a href="list_subscriber.php">Subscriber's idea</a></li>
-                <li><a href="#">Add Moderators</a></li>
+                <li><a href="add_moderator.php">Add Moderators</a></li>
               </ul>
 
             </li>

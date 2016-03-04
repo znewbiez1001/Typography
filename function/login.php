@@ -10,7 +10,7 @@ session_start();
 
   if (isset($_POST['Submit'])) {
       $username = $_POST['USERNAME'];
-      $password = $_POST['PASSWORD'];
+      $password = SHA1($_POST['PASSWORD']);
       $username = strip_tags($username);
       $username = addslashes($username);
       $password = strip_tags($password);
@@ -19,7 +19,23 @@ session_start();
       if ($username == '' || $password == '') {
           echo "<script>alert('DONT LEAVE ANY BLANK')</script>";
       } else {
-          $result = mysql_query("SELECT * FROM moderator WHERE USERNAME ='$username' AND PASSWORD = '$password' ", $conn);
+          $result = mysql_query("SELECT * FROM moderator WHERE USERNAME ='$username' AND PASSWORD = '$password' AND LEVEL ", $conn);
+          if (mysql_num_rows($result) > 0) {
+              while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+                  if ($row['USERNAME'] == $username && $row['PASSWORD'] == $password && $row['LEVEL'] == '1') {
+                      echo "<script>
+                        alert('Logged in');
+                      </script>";
+                      $_SESSION['USERNAME'] = $username;
+                      header("location: admin.php");
+
+                  } else {
+                    echo "<script>
+                      alert('Wrong password or username');
+                    </script>";
+                  }
+              }
+          } $result = mysql_query("SELECT * FROM register WHERE USERNAME ='$username' AND PASSWORD = '$password' ", $conn);
           if (mysql_num_rows($result) > 0) {
               while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
                   if ($row['USERNAME'] == $username && $row['PASSWORD'] == $password) {
@@ -27,14 +43,11 @@ session_start();
                         alert('Logged in');
                       </script>";
                       $_SESSION['USERNAME'] = $username;
-                      header("location: admin.php");
+                      header("location: ../index.php");
 
                   }
               }
-          } else {
-            echo "<script>
-              alert('Wrong username or password');
-            </script>";
+
           }
       }
   }
@@ -64,26 +77,28 @@ session_start();
     <?php include '../core/navbar.php'; ?>
 
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <strong>Welcome back</strong>
-      </div>
-      <div class="panel-body">
-        <form class="form-horizontal" role="form" method="post" name="Login_Form" action="login.php">
-          <div class="form-group">
-            <label>
-              Username
-            </label>
-            <input type="text" class="form-control" name="USERNAME" placeholder="Username"  />
-          </div>
-          <div class="form-group">
-            <label>
-              Password
-            </label>
-            <input type="password" class="form-control" name="PASSWORD" placeholder="Password"  />
-          </div>
-          <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit" onclick="validate()">Login</button>
-        </form>
+    <div class="animatedParent" data-sequence='500'>
+      <div class="panel panel-default animated fadeInDownShort">
+        <div class="panel-heading">
+          <strong>Welcome back</strong>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form" method="post" name="Login_Form" action="login.php">
+            <div class="form-group">
+              <label>
+                Username
+              </label>
+              <input type="text" class="form-control" name="USERNAME" placeholder="Username"  />
+            </div>
+            <div class="form-group">
+              <label>
+                Password
+              </label>
+              <input type="password" class="form-control" name="PASSWORD" placeholder="Password"  />
+            </div>
+            <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit" onclick="validate()">Login</button>
+          </form>
+        </div>
       </div>
     </div>
 	</div>
